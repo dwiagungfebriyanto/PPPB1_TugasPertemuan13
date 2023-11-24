@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ContactDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:elevation="5dp"
+            android:paddingStart="25dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                app:tint="@color/pale_silver" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/item_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
+
+        <TextView
+            android:id="@+id/txt_name"
+            style="@style/white_25sp"
+            android:paddingTop="30dp"
+            android:paddingHorizontal="20dp"
+            android:text="Dwi Agung Febriyanto" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/label_15sp"
+                android:text="Mobile" />
+            <TextView
+                android:id="@+id/txt_phone"
+                style="@style/white_18sp"
+                android:text="0895-2209-9901" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/label_15sp"
+                android:text="Email" />
+            <TextView
+                android:id="@+id/txt_email"
+                style="@style/white_18sp"
+                android:text="dwiagungfebriyanto@mail.ugm.ac.id" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <FrameLayout
+                android:id="@+id/btn_phone"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/action_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_message">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_phone_24"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btn_message"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:padding="10dp"
+                android:background="@drawable/action_background"
+                app:layout_constraintStart_toEndOf="@id/guideline2"
+                app:layout_constraintEnd_toEndOf="@id/guideline2">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_message_24"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/btn_email"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/action_background"
+                app:layout_constraintStart_toEndOf="@id/btn_message"
+                app:layout_constraintEnd_toEndOf="parent">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_email_24"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/profile_image_background"
+        app:layout_constraintBottom_toTopOf="@id/linear_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linear_layout">
+        <TextView
+            android:id="@+id/txt_first_letter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/inter"
+            android:text="D"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <LinearLayout
+        android:id="@+id/btn_edit"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/outline_edit_24"
+            app:tint="@color/pale_silver" />
+        <TextView
+            style="@style/pale_silver_15sp"
+            android:text="Edit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_delete"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/outline_delete_24"
+            app:tint="@color/pale_silver" />
+        <TextView
+            style="@style/pale_silver_15sp"
+            android:text="Delete" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
